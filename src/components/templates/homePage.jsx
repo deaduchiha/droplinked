@@ -1,29 +1,14 @@
 // react
-import React, { useEffect } from "react";
+import React from "react";
 // components
 import HomeTitle from "../modules/home/homeTitle";
-import ProductCard from "../modules/home/cards/productCard";
+import HomePageProducts from "../modules/home/products";
 
 const HomePage = () => {
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(
-          "https://apiv2.droplinked.com/collection/public/testunstoppable"
-        );
-        const data = await response.json();
-        console.log(data.data[0].products);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchProducts();
-  }, []);
   return (
     <>
       <HomeTitle />
-      <ProductCard />
+      <HomePageProducts />
     </>
   );
 };
