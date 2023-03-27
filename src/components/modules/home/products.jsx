@@ -26,7 +26,7 @@ const HomePageProducts = () => {
         <Flex
           justifyContent={{ base: "center", md: "space-between" }}
           flexWrap="wrap"
-          gap={3}
+          gap={5}
           my={10}
         >
           {productsState.products.map((product) => (

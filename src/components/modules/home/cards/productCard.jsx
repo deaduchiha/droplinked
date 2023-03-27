@@ -11,7 +11,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const ProductCard = () => {
+const ProductCard = ({ productData }) => {
+  const { shopifyData } = productData;
+  const { title, images } = shopifyData;
+
+  console.log(images[0]);
+
   return (
     <Card
       bg="#1E1E1E"
@@ -19,15 +24,19 @@ const ProductCard = () => {
       h="fit-content"
       color="#fff"
       boxShadow="lg"
+      _hover={{
+        bg: "#060606",
+        cursor: "pointer",
+      }}
     >
       <CardBody>
         <Image
-          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+          src={images[0].src}
           alt="Green double couch with wooden legs"
           borderRadius="lg"
         />
         <Stack mt="6" spacing="3">
-          <Heading size="md">Living room Sofa</Heading>
+          <Heading size="md">{title}</Heading>
         </Stack>
       </CardBody>
       <CardFooter display="flex" justifyContent="flex-end">
