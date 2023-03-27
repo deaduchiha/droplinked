@@ -1,7 +1,14 @@
+// react
 import React from "react";
+// components
+import HomeTitle from "../modules/home/homeTitle";
 
 const HomePage = () => {
-  return <h1>this is my landing page</h1>;
+  return (
+    <>
+      <HomeTitle />
+    </>
+  );
 };
 
 export default HomePage;
