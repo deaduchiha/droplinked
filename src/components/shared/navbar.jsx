@@ -1,5 +1,5 @@
 // react
-import React, { useState } from "react";
+import React from "react";
 // chakra ui
 import { Flex, Heading } from "@chakra-ui/react";
 //icons
