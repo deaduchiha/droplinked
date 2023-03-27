@@ -1,7 +1,10 @@
+// react
 import React from "react";
+// template
+import Details from "../../components/templates/details";
 
 const ProductsDetails = () => {
-  return <h1>Product Page</h1>;
+  return <Details />;
 };
 
 export default ProductsDetails;
