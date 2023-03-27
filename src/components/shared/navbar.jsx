@@ -1,8 +1,8 @@
 // react
 import React from "react";
 
-const Layout = () => {
+const Navbar = () => {
   return <h1>navbar</h1>;
 };
 
-export default Layout;
+export default Navbar;
