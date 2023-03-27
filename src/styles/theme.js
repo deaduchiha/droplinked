@@ -1,11 +1,12 @@
 import { extendTheme } from "@chakra-ui/react";
+import "./fonts.css";
 
 const theme = extendTheme({
-  // for custom breakPoints
-  breakpoints: {},
   // fonts
+
   fonts: {
     body: "Avenir Next",
+    heading: "Avenir Next",
   },
   // styles
   styles: {
