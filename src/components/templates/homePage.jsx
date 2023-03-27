@@ -1,5 +1,5 @@
 // react
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 // components
 import HomeTitle from "../modules/home/homeTitle";
 import ProductCard from "../modules/home/cards/productCard";
