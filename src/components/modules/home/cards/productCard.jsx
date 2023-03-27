@@ -2,12 +2,9 @@
 import React from "react";
 // chakra ui
 import {
-  Button,
-  ButtonGroup,
   Card,
   CardBody,
   CardFooter,
-  Divider,
   Flex,
   Heading,
   Image,
