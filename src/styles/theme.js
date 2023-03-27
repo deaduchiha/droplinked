@@ -6,7 +6,6 @@ const theme = extendTheme({
 
   fonts: {
     body: "Avenir Next",
-    heading: "Avenir Next",
   },
   // styles
   styles: {
