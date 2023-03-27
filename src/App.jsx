@@ -4,7 +4,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 // components
 import Landing from "./pages/landing/landing";
-import Products from "./pages/products/products";
+import ProductsDetails from "./pages/productsDetails/productsDetails";
 // redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -14,7 +14,7 @@ const Home = () => {
     <Provider store={store}>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/:id" element={<ProductsDetails />} />
       </Routes>
     </Provider>
   );
