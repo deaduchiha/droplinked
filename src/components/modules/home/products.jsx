@@ -30,7 +30,7 @@ const HomePageProducts = () => {
           my={10}
         >
           {productsState.products.map((product) => (
-            <ProductCard />
+            <ProductCard key={product._id} productData={product} />
           ))}
         </Flex>
       )}
