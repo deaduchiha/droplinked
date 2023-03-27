@@ -22,7 +22,9 @@ const HomePageProducts = () => {
       {productsState.loading ? (
         <Loader />
       ) : productsState.error ? (
-        <p>something went wrong.</p>
+        <Flex justifyContent="center" alignItems="center" mt="40">
+          something went wrong.
+        </Flex>
       ) : (
         <Flex
           justifyContent={{ base: "center", md: "space-between" }}
