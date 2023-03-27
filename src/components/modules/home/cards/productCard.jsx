@@ -14,8 +14,13 @@ import {
 
 const ProductCard = () => {
   return (
-    <Flex justifyContent="space-between" flexWrap="wrap" gap={3} my={10}>
-      <Card bg="#1E1E1E" maxW="16vw" color="#fff" boxShadow="lg">
+    <Flex
+      justifyContent={{ base: "center", md: "space-between" }}
+      flexWrap="wrap"
+      gap={3}
+      my={10}
+    >
+      <Card bg="#1E1E1E" maxW={{ base: "18em" }} color="#fff" boxShadow="lg">
         <CardBody>
           <Image
             src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
