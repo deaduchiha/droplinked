@@ -5,10 +5,11 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 // chakra ui
 import { ChakraProvider } from "@chakra-ui/react";
+import theme from "./styles/theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ChakraProvider>
+  <ChakraProvider theme={theme}>
     <App />
   </ChakraProvider>
 );
