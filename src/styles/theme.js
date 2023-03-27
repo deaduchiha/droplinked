@@ -3,7 +3,6 @@ import "./fonts.css";
 
 const theme = extendTheme({
   // fonts
-
   fonts: {
     body: "Avenir Next",
     heading: "Avenir Next",
