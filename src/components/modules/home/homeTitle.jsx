@@ -8,7 +8,6 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  VStack,
 } from "@chakra-ui/react";
 // icons
 import { BiSearch } from "react-icons/bi";
