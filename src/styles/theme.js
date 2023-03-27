@@ -31,7 +31,9 @@ const theme = extendTheme({
       },
     },
   },
-  colors: {},
+  colors: {
+    primaryColor: "#2EC99E",
+  },
 });
 
 export default theme;
