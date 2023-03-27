@@ -1,7 +1,7 @@
 // react
 import React, { useState } from "react";
 // chakra ui
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 //icons
 import { RiShoppingCart2Line } from "react-icons/ri";
 
