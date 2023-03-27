@@ -1,7 +1,7 @@
 import React from "react";
 
-const App = () => {
+const Home = () => {
   return <h1>The quick</h1>;
 };
 
-export default App;
+export default Home;
