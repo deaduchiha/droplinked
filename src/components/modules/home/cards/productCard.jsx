@@ -10,12 +10,12 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+//react router dom
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ productData }) => {
   const { shopifyData } = productData;
-  const { title, images } = shopifyData;
-
-  console.log(images[0]);
+  const { title, images, options } = shopifyData;
 
   return (
     <Card
@@ -28,6 +28,8 @@ const ProductCard = ({ productData }) => {
         bg: "#060606",
         cursor: "pointer",
       }}
+      as={Link}
+      to={`/${options[0].product_id}`}
     >
       <CardBody>
         <Image
