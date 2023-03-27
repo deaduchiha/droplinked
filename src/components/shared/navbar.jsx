@@ -6,7 +6,6 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { RiShoppingCart2Line } from "react-icons/ri";
 
 const Navbar = () => {
-  const [qunatity, setQuantity] = useState(false);
   return (
     <>
       <Flex
