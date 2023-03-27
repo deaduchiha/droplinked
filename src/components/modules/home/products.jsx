@@ -7,6 +7,7 @@ import { fetchProducts } from "../../../redux/products/productsAction";
 import { Flex } from "@chakra-ui/react";
 // components
 import ProductCard from "./cards/productCard";
+import Loader from "../../shared/Loader";
 
 const HomePageProducts = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const HomePageProducts = () => {
   return (
     <>
       {productsState.loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : productsState.error ? (
         <p>something went wrong.</p>
       ) : (
