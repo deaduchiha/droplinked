@@ -1,7 +1,10 @@
+// react
 import React from "react";
+// components
+import HomePage from "../../components/templates/homePage";
 
 const Landing = () => {
-  return <h1>Landing</h1>;
+  return <HomePage />;
 };
 
 export default Landing;
