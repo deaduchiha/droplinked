@@ -1,7 +1,14 @@
+// react
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+// components
 import App from "./App";
+// chakra ui
+import { ChakraProvider } from "@chakra-ui/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <ChakraProvider>
+    <App />
+  </ChakraProvider>
+);
