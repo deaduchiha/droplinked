@@ -2,6 +2,8 @@
 import React from "react";
 // chakra ui
 import { Flex, Heading } from "@chakra-ui/react";
+//react router dom
+import { Link } from "react-router-dom";
 //icons
 import { RiShoppingCart2Line } from "react-icons/ri";
 
@@ -17,7 +19,7 @@ const Navbar = () => {
         borderColor="secondaryColor"
         position="relative"
       >
-        <Heading as="h2" color="primaryColor">
+        <Heading as={Link} to="/" color="primaryColor">
           droplink
         </Heading>
         <RiShoppingCart2Line color="#fff" size={35}></RiShoppingCart2Line>
