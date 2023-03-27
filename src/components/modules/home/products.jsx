@@ -1,8 +1,8 @@
 // react
 import React from "react";
 
-const HomePageProducst = () => {
+const HomePageProducts = () => {
   return <h1>products homepage</h1>;
 };
 
-export default HomePageProducst;
+export default HomePageProducts;
