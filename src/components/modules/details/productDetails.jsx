@@ -45,6 +45,7 @@ const ProductDetail = () => {
             <Flex
               justifyContent="space-between"
               flexDirection={{ base: "column", md: "row" }}
+              gap={10}
             >
               <Box w={{ base: "full", md: "96" }}>
                 <DetailsImage data={data} />

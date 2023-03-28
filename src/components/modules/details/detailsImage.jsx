@@ -18,6 +18,7 @@ const DetailsImage = ({ data }) => {
       <Swiper className="mySwiper">
         <SwiperSlide>
           <Image
+            borderRadius={10}
             w={{ base: "full", md: "349px" }}
             src={showImage}
             alt="image"

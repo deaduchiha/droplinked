@@ -5,12 +5,15 @@ import { Button, Table, TableContainer, Tbody, Td, Tr } from "@chakra-ui/react";
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import { quantityCount } from "../../../helper/function";
+import { addItem, removeItem } from "../../../redux/cart/CartAction";
 
 const BuyProduct = ({ data }) => {
   const { variants } = data;
-  console.log(variants);
+
   const state = useSelector((state) => state.cartsState);
   const dispatch = useDispatch();
+
+  console.log(state);
 
   return (
     <TableContainer>
@@ -25,9 +28,7 @@ const BuyProduct = ({ data }) => {
                 {quantityCount(state, variant.id) <= 0 && (
                   <Button
                     colorScheme="green"
-                    onClick={() =>
-                      dispatch({ type: "ADD_ITEM", payload: variant })
-                    }
+                    onClick={() => dispatch(addItem(variant))}
                   >
                     Request
                   </Button>
@@ -35,9 +36,7 @@ const BuyProduct = ({ data }) => {
                 {quantityCount(state, variant.id) === 1 && (
                   <Button
                     colorScheme="red"
-                    onClick={() =>
-                      dispatch({ type: "REMOVE_ITEM", payload: variant })
-                    }
+                    onClick={() => dispatch(removeItem(variant))}
                   >
                     Remove
                   </Button>
