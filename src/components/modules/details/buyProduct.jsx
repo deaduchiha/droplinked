@@ -4,7 +4,6 @@ import React from "react";
 import { Button, Table, TableContainer, Tbody, Td, Tr } from "@chakra-ui/react";
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, removeItem } from "../../../redux/cart/CartAction";
 import { quantityCount } from "../../../helper/function";
 
 const BuyProduct = ({ data }) => {
