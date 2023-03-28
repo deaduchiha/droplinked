@@ -11,6 +11,7 @@ import Loader from "../../shared/Loader";
 // components
 import DetailsImage from "./detailsImage";
 import Description from "./description";
+import BuyProduct from "./buyProduct";
 
 const ProductDetail = () => {
   const id = useParams().id;
@@ -49,6 +50,7 @@ const ProductDetail = () => {
                 <DetailsImage data={data} />
               </Box>
               <Description data={data} />
+              <BuyProduct data={data} />
             </Flex>
           </Container>
         </Box>
