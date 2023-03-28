@@ -1,5 +1,5 @@
 // react
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // chakra ui
 import {
   Box,
@@ -12,20 +12,26 @@ import {
 // icons
 import { BiSearch } from "react-icons/bi";
 //redux
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const HomeTitle = () => {
   const productsState = useSelector((state) => state.productsState);
+  const dispatch = useDispatch();
+
   const { products } = productsState;
   const [search, setSearch] = useState("");
 
-  const find = products.map((p) => p.shopifyData);
-  const newProducts = find.filter((t) =>
+  const shopifyData = products.map((p) => p.shopifyData);
+  const newProducts = shopifyData.filter((t) =>
     t.title.toLowerCase().includes(search.toLowerCase())
   );
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
+  };
+
+  const handleFind = () => {
+    dispatch(newProducts);
   };
 
   console.log(newProducts);
@@ -50,7 +56,7 @@ const HomeTitle = () => {
                 color="#fff"
                 size={25}
                 cursor="pointer"
-                // onClick={FindHandle}
+                onClick={handleFind}
               />
             }
           />
