@@ -20,7 +20,7 @@ const HomeTitle = () => {
   const [search, setSearch] = useState("");
 
   const find = products.map((p) => p.shopifyData);
-  const title = find.filter((t) =>
+  const newProducts = find.filter((t) =>
     t.title.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -28,7 +28,7 @@ const HomeTitle = () => {
     setSearch(event.target.value);
   };
 
-  console.log(title);
+  console.log(newProducts);
 
   return (
     <Flex w="full" flexDirection="column">
