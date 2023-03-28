@@ -44,6 +44,7 @@ const DetailsImage = ({ data }) => {
               w={{ base: "full", md: "20" }}
               src={img.src}
               alt="image"
+              cursor="pointer"
               onClick={() => setShowImage(img.src)}
             />
           </SwiperSlide>

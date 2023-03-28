@@ -16,13 +16,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 const HomeTitle = () => {
   const productsState = useSelector((state) => state.productsState);
+
   const dispatch = useDispatch();
 
   const { products } = productsState;
   const [search, setSearch] = useState("");
 
-  const shopifyData = products.map((p) => p.shopifyData);
-  const newProducts = shopifyData.filter((t) =>
+  const find = products.map((p) => p.shopifyData);
+  const newProducts = find.filter((t) =>
     t.title.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -30,9 +31,7 @@ const HomeTitle = () => {
     setSearch(event.target.value);
   };
 
-  const handleFind = () => {
-    dispatch(newProducts);
-  };
+  const handleFind = () => {};
 
   console.log(newProducts);
 

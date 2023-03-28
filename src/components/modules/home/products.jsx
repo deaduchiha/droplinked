@@ -10,12 +10,12 @@ import ProductCard from "./cards/productCard";
 import Loader from "../../shared/Loader";
 
 const HomePageProducts = () => {
-  const dispatch = useDispatch();
   const productsState = useSelector((state) => state.productsState);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!productsState.products.length) dispatch(fetchProducts());
-  }, [dispatch, productsState.products.length]);
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   return (
     <>

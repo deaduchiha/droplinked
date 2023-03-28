@@ -2,6 +2,7 @@ const initialState = {
   loading: "false",
   products: [],
   error: "",
+  search: "",
 };
 
 const productsReducer = (state = initialState, action) => {
