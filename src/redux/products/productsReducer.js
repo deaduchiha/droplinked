@@ -22,6 +22,11 @@ const productsReducer = (state = initialState, action) => {
         loading: false,
         products: action.payload,
       };
+    case "SEARCH":
+      return {
+        ...state,
+        search: action.payload,
+      };
 
     default:
       return state;
