@@ -13,8 +13,6 @@ const BuyProduct = ({ data }) => {
   const state = useSelector((state) => state.cartsState);
   const dispatch = useDispatch();
 
-  console.log(state);
-
   return (
     <TableContainer>
       <Table borderColor="red !important">
