@@ -6,8 +6,10 @@ import { Box, Container, Flex } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 // redux
 import axios from "axios";
-import DetailsImage from "./detailsImage";
+// loader
 import Loader from "../../shared/Loader";
+// components
+import DetailsImage from "./detailsImage";
 import Description from "./description";
 
 const ProductDetail = () => {
@@ -46,9 +48,7 @@ const ProductDetail = () => {
               <Box w={{ base: "full", md: "96" }}>
                 <DetailsImage data={data} />
               </Box>
-              <Box>
-                <Description data={data} />
-              </Box>
+              <Description data={data} />
             </Flex>
           </Container>
         </Box>
