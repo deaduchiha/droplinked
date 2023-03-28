@@ -14,14 +14,17 @@ const productsReducer = (state = initialState, action) => {
       };
     case "FETCH_PRODUCTS_SUCCESS":
       return {
+        ...state,
         loading: false,
         products: action.payload,
       };
     case "FETCH_PRODUCTS_FAILURE":
       return {
+        ...state,
         loading: false,
         products: action.payload,
       };
+
     case "SEARCH":
       return {
         ...state,
