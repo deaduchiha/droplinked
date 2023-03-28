@@ -25,7 +25,7 @@ const ProductDetail = () => {
         .get(`https://apiv2.droplinked.com/product/public/${id}`)
         .then((response) => {
           const data = response.data.data.shopifyData;
-          console.log(data);
+
           setData(data);
           setIsLoading(false);
         })
