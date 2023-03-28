@@ -1,5 +1,5 @@
 // react
-import React from "react";
+import React, { useState } from "react";
 // chakra ui
 import {
   Box,
@@ -11,8 +11,32 @@ import {
 } from "@chakra-ui/react";
 // icons
 import { BiSearch } from "react-icons/bi";
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../../../redux/products/productsAction";
 
 const HomeTitle = () => {
+  const productsState = useSelector((state) => state.productsState);
+  const dispatch = useDispatch();
+  const { products } = productsState;
+  const [search, setSearch] = useState("");
+
+  const find = products.map((p) => p.shopifyData);
+  const title = find.filter((t) =>
+    t.title.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  // find
+  const FindHandle = () => {
+    console.log("click");
+    dispatch(fetchProducts(title));
+  };
+  console.log(title);
+
   return (
     <Flex w="full" flexDirection="column">
       <Heading
@@ -25,7 +49,7 @@ const HomeTitle = () => {
       >
         Hungry Artist Holders Store
       </Heading>
-      <Box w="72" alignSelf="flex-end">
+      <Box w={{ base: "full", md: "72" }} alignSelf="flex-end">
         <InputGroup>
           <InputRightElement
             children={
@@ -33,7 +57,7 @@ const HomeTitle = () => {
                 color="#fff"
                 size={25}
                 cursor="pointer"
-                onClick={() => console.log("you clicked on me ")}
+                onClick={FindHandle}
               />
             }
           />
@@ -44,6 +68,8 @@ const HomeTitle = () => {
             borderRadius="30"
             borderColor="transparent"
             placeholder="search"
+            onChange={handleSearch}
+            value={search}
           />
         </InputGroup>
       </Box>
