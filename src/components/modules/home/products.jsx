@@ -14,8 +14,8 @@ const HomePageProducts = () => {
   const productsState = useSelector((state) => state.productsState);
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    if (!productsState.products.length) dispatch(fetchProducts());
+  }, [dispatch, productsState.products.length]);
 
   return (
     <>

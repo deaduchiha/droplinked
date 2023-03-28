@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ productData }) => {
   const { shopifyData } = productData;
-  const { title, images, options } = shopifyData;
+  const { title, images } = shopifyData;
 
   return (
     <Card
@@ -29,7 +29,7 @@ const ProductCard = ({ productData }) => {
         cursor: "pointer",
       }}
       as={Link}
-      to={`/${options[0].product_id}`}
+      to={`/${productData._id}`}
     >
       <CardBody>
         <Image
