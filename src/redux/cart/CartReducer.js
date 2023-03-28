@@ -1,8 +1,11 @@
-import { setItem } from "../../helper/storage";
+import { setItem, getItem } from "../../helper/storage";
+
+const savedCart = getItem("Cart");
+const quantityCart = getItem("Quantity");
 
 const initialState = {
-  selectedItems: [],
-  itemsCounter: 0,
+  selectedItems: savedCart ? JSON.parse(savedCart) : [],
+  itemsCounter: savedCart ? quantityCart : 0,
   total: 0,
   checkout: false,
 };
@@ -12,6 +15,7 @@ const sumItems = (items) => {
     (total, product) => total + product.quantity,
     0
   );
+  setItem("Quantity", itemsCounter);
   const total = items
     .reduce((total, product) => total + product.price * product.quantity, 0)
     .toFixed(2);
