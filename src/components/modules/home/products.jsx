@@ -17,6 +17,15 @@ const HomePageProducts = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
+  let products = [];
+
+  if (productsState.products.length > 0) {
+    products = productsState.products.filter((product) => {
+      return product.shopifyData.title
+        .toLowerCase()
+        .includes(productsState.search);
+    });
+  }
   return (
     <>
       {productsState.loading ? (
@@ -32,7 +41,7 @@ const HomePageProducts = () => {
           gap={5}
           my={10}
         >
-          {productsState.products.map((product) => (
+          {products.map((product) => (
             <ProductCard key={product._id} productData={product} />
           ))}
         </Flex>
