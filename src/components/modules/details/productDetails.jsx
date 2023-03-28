@@ -1,7 +1,7 @@
 // react
 import React, { useEffect, useState } from "react";
 // chakra ui
-import { Flex } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 //react router dom
 import { useParams } from "react-router-dom";
 // redux
@@ -27,9 +27,9 @@ const ProductDetail = () => {
   }, [data.length, id]);
 
   return (
-    <Flex h="38em" mt={5} bg="secondaryColor">
-      {data.title}
-    </Flex>
+    <Box h="38em" mt={5} bg="secondaryColor" borderRadius={10} py={10}>
+      <Container maxW="container.md"></Container>
+    </Box>
   );
 };
 export default ProductDetail;
