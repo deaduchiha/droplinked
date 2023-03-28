@@ -14,11 +14,11 @@ const DetailsImage = ({ data }) => {
   const [showImage, setShowImage] = useState([images[0].src]);
 
   return (
-    <Box>
+    <Box mb={10}>
       <Swiper className="mySwiper">
         <SwiperSlide>
           <Image
-            w="349px"
+            w={{ base: "full", md: "349px" }}
             src={showImage}
             alt="image"
             mb={10}
@@ -28,6 +28,7 @@ const DetailsImage = ({ data }) => {
       </Swiper>
       <Swiper
         effect={"flip"}
+        spaceBetween={15}
         pagination={true}
         navigation={true}
         modules={[Pagination, Navigation]}
@@ -37,8 +38,9 @@ const DetailsImage = ({ data }) => {
         {images.map((img) => (
           <SwiperSlide key={img.id}>
             <Image
+              borderRadius={15}
               userSelect="none"
-              w="20"
+              w={{ base: "full", md: "20" }}
               src={img.src}
               alt="image"
               onClick={() => setShowImage(img.src)}

@@ -3,7 +3,7 @@ import React from "react";
 
 const Description = ({ data }) => {
   return (
-    <Box>
+    <Box mb={10}>
       <Heading mb={10} as="h2">
         {data.title}
       </Heading>
