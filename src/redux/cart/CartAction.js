@@ -12,16 +12,4 @@ const removeItem = (product) => {
   };
 };
 
-const checkout = (product) => {
-  return {
-    type: "CHECKOUT",
-  };
-};
-
-const clear = (product) => {
-  return {
-    type: "CLEAR",
-  };
-};
-
-export { addItem, removeItem, checkout, clear };
+export { addItem, removeItem };

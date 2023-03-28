@@ -3,12 +3,15 @@ import React from "react";
 // chakra ui
 import { Button, Table, TableContainer, Tbody, Td, Tr } from "@chakra-ui/react";
 // redux
-// import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem, removeItem } from "../../../redux/cart/CartAction";
+import { quantityCount } from "../../../helper/function";
 
 const BuyProduct = ({ data }) => {
   const { variants } = data;
-  // const state = useSelector((state) => state.cartsState);
-  // const dispatch = useDispatch();
+  console.log(variants);
+  const state = useSelector((state) => state.cartsState);
+  const dispatch = useDispatch();
 
   return (
     <TableContainer>
@@ -20,7 +23,26 @@ const BuyProduct = ({ data }) => {
               <Td>Quantity: {`${Math.abs(variant.inventory_quantity)}`}</Td>
               <Td>Weight: {`${variant.weight}`}</Td>
               <Td isNumeric>
-                <Button colorScheme="green">Request</Button>
+                {quantityCount(state, variant.id) <= 0 && (
+                  <Button
+                    colorScheme="green"
+                    onClick={() =>
+                      dispatch({ type: "ADD_ITEM", payload: variant })
+                    }
+                  >
+                    Request
+                  </Button>
+                )}
+                {quantityCount(state, variant.id) === 1 && (
+                  <Button
+                    colorScheme="red"
+                    onClick={() =>
+                      dispatch({ type: "REMOVE_ITEM", payload: variant })
+                    }
+                  >
+                    Remove
+                  </Button>
+                )}
               </Td>
             </Tr>
           ))}
