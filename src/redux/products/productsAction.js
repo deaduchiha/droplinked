@@ -20,6 +20,13 @@ const fetchProductsFailure = (error) => {
   };
 };
 
+export const searchProducts = (payload) => {
+  return {
+    type: "SEARCH",
+    payload,
+  };
+};
+
 export const fetchProducts = () => {
   return (dispatch) => {
     dispatch(fetchProductsRequest());
