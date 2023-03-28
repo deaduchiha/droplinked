@@ -37,11 +37,18 @@ const ProductDetail = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <Box h="38em" mt={5} bg="secondaryColor" borderRadius={10} py={10}>
+        <Box minH="38em" mt={5} bg="secondaryColor" borderRadius={10} py={10}>
           <Container maxW="container.md">
-            <Flex justifyContent="space-between">
-              <DetailsImage data={data} />
-              <Description data={data} />
+            <Flex
+              justifyContent="space-between"
+              flexDirection={{ base: "column", md: "row" }}
+            >
+              <Box w={{ base: "full", md: "96" }}>
+                <DetailsImage data={data} />
+              </Box>
+              <Box>
+                <Description data={data} />
+              </Box>
             </Flex>
           </Container>
         </Box>
