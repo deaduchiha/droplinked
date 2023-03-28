@@ -1,3 +1,5 @@
+import { getItem, setItem } from "../../helper/storage";
+
 const initialState = {
   selectedItems: [],
   itemsCounter: 0,
@@ -24,7 +26,13 @@ const cartReducer = (state = initialState, action) => {
           ...action.payload,
           quantity: 1,
         });
+
+        setItem(
+          "Cart",
+          JSON.stringify(state.selectedItems.map((item) => item))
+        );
       }
+
       return {
         ...state,
         selectedItems: [...state.selectedItems],
@@ -33,7 +41,11 @@ const cartReducer = (state = initialState, action) => {
       };
     case "REMOVE_ITEM":
       const newSelectedItems = state.selectedItems.filter(
-        (item) => item._id !== action.payload._id
+        (item) => item.id !== action.payload.id
+      );
+      setItem(
+        "Cart",
+        JSON.stringify(newSelectedItems.filter((item) => item.id))
       );
 
       return {

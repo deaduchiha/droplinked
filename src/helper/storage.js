@@ -15,7 +15,7 @@ const removeItem = (key) => {
   localStorage.removeItem(key);
 };
 
-// cleare all localStorage of this site
+// clearer all localStorage of this site
 const clearStorage = () => {
   localStorage.clear();
 };
