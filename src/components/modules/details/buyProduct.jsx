@@ -1,9 +1,14 @@
 // react
-import { Button, Table, TableContainer, Tbody, Td, Tr } from "@chakra-ui/react";
 import React from "react";
+// chakra ui
+import { Button, Table, TableContainer, Tbody, Td, Tr } from "@chakra-ui/react";
+// redux
+// import { useSelector, useDispatch } from "react-redux";
 
 const BuyProduct = ({ data }) => {
   const { variants } = data;
+  // const state = useSelector((state) => state.cartsState);
+  // const dispatch = useDispatch();
 
   return (
     <TableContainer>

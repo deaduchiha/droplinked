@@ -10,14 +10,19 @@ import theme from "./styles/theme";
 import { BrowserRouter as Router } from "react-router-dom";
 // layout
 import Layout from "./components/shared/layout";
+// redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ChakraProvider theme={theme}>
-    <Router>
-      <Layout>
-        <Home />
-      </Layout>
-    </Router>
-  </ChakraProvider>
+  <Provider store={store}>
+    <ChakraProvider theme={theme}>
+      <Router>
+        <Layout>
+          <Home />
+        </Layout>
+      </Router>
+    </ChakraProvider>
+  </Provider>
 );

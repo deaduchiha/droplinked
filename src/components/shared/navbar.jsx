@@ -6,8 +6,12 @@ import { Flex, Heading } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 //icons
 import { RiShoppingCart2Line } from "react-icons/ri";
+//redux
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const state = useSelector((state) => state.cartsState);
+
   return (
     <>
       <Flex
@@ -37,7 +41,7 @@ const Navbar = () => {
           fontSize="11"
           userSelect="none"
         >
-          2
+          {state.itemsCounter}
         </Flex>
       </Flex>
     </>
