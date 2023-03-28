@@ -12,12 +12,10 @@ import {
 // icons
 import { BiSearch } from "react-icons/bi";
 //redux
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../../redux/products/productsAction";
+import { useSelector } from "react-redux";
 
 const HomeTitle = () => {
   const productsState = useSelector((state) => state.productsState);
-  const dispatch = useDispatch();
   const { products } = productsState;
   const [search, setSearch] = useState("");
 
@@ -29,8 +27,6 @@ const HomeTitle = () => {
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
-
-  // find
 
   console.log(title);
 
