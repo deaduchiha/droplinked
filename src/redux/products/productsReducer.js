@@ -21,6 +21,7 @@ const productsReducer = (state = initialState, action) => {
         loading: false,
         products: action.payload,
       };
+
     default:
       return state;
   }

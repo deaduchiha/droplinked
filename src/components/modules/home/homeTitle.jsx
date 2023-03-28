@@ -1,5 +1,5 @@
 // react
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // chakra ui
 import {
   Box,
@@ -31,10 +31,7 @@ const HomeTitle = () => {
   };
 
   // find
-  const FindHandle = () => {
-    console.log("click");
-    dispatch(fetchProducts(title));
-  };
+
   console.log(title);
 
   return (
@@ -57,7 +54,7 @@ const HomeTitle = () => {
                 color="#fff"
                 size={25}
                 cursor="pointer"
-                onClick={FindHandle}
+                // onClick={FindHandle}
               />
             }
           />
