@@ -1,4 +1,4 @@
-import { getItem, setItem } from "../../helper/storage";
+import { setItem } from "../../helper/storage";
 
 const initialState = {
   selectedItems: [],
