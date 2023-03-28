@@ -50,8 +50,8 @@ const ProductDetail = () => {
                 <DetailsImage data={data} />
               </Box>
               <Description data={data} />
-              <BuyProduct data={data} />
             </Flex>
+            <BuyProduct data={data} />
           </Container>
         </Box>
       )}

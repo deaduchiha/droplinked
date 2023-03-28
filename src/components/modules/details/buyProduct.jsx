@@ -1,8 +1,9 @@
 // react
+import { Heading } from "@chakra-ui/react";
 import React from "react";
 
 const BuyProduct = ({ data }) => {
-  return <h1>buy products</h1>;
+  return <Heading>Buy product2</Heading>;
 };
 
 export default BuyProduct;
